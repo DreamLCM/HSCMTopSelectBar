@@ -1,0 +1,6 @@
+framework module HSCMTopSelectBar {
+  umbrella header "HSCMTopSelectBar-umbrella.h"
+
+  export *
+  module * { export * }
+}

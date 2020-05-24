@@ -1,0 +1,22 @@
+{
+  "name": "HSCMTopSelectBar",
+  "version": "0.1.0",
+  "summary": "A short description of HSCMTopSelectBar.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/953330953@qq.com/HSCMTopSelectBar",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "953330953@qq.com": "953330953@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/953330953@qq.com/HSCMTopSelectBar.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "HSCMTopSelectBar/Classes/**/*"
+}

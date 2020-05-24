@@ -1,0 +1,16 @@
+PODS:
+  - HSCMTopSelectBar (0.1.0)
+
+DEPENDENCIES:
+  - HSCMTopSelectBar (from `../`)
+
+EXTERNAL SOURCES:
+  HSCMTopSelectBar:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HSCMTopSelectBar: 1e4222cda570f545539dee45e3c4d2b0a89f67ad
+
+PODFILE CHECKSUM: e7c12da27824145fc493b4e0ff45053bdb210575
+
+COCOAPODS: 1.9.1

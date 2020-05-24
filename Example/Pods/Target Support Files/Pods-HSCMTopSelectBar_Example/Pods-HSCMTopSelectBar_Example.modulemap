@@ -1,0 +1,6 @@
+framework module Pods_HSCMTopSelectBar_Example {
+  umbrella header "Pods-HSCMTopSelectBar_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

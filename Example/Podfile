@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'HSCMTopSelectBar_Example' do
+  pod 'HSCMTopSelectBar', :path => '../'
+
+  target 'HSCMTopSelectBar_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

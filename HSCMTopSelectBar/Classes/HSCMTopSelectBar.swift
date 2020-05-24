@@ -19,7 +19,7 @@ public protocol HSCMTopSelectBarViewDelegate : NSObjectProtocol {
 
 
 
-class HSCMTopSelectBarView: UIView {
+open class HSCMTopSelectBar: UIView {
 
     /// collectionView
     private lazy var collectionViewSelectContent: UICollectionView = {
@@ -73,7 +73,7 @@ class HSCMTopSelectBarView: UIView {
 }
 
 
-extension HSCMTopSelectBarView: UICollectionViewDataSource,
+extension HSCMTopSelectBar: UICollectionViewDataSource,
                             UICollectionViewDelegate,
                             UICollectionViewDelegateFlowLayout {
     

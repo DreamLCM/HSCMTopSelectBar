@@ -12,7 +12,7 @@
 		2257C7BE88C3DB0E5AE91A94C86A2513 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		75EB769A0FA71D3E6C9FDDA602D20781 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		7846258F371B0EF289D31646746C8825 /* HSCMTopSelectBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C9F4719E75BD4EA0F4AA8A56B4BB44E9 /* HSCMTopSelectBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7A81E69CB7F4551440E60EB713B51C75 /* HSCMTopSelectBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B464296D76FC5A8DA74DBFA0F6B5B8B /* HSCMTopSelectBarView.swift */; };
+		7A81E69CB7F4551440E60EB713B51C75 /* HSCMTopSelectBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B464296D76FC5A8DA74DBFA0F6B5B8B /* HSCMTopSelectBar.swift */; };
 		8069006861811539699C031572076FA7 /* Pods-HSCMTopSelectBar_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 889EB4871863A67F60A5967C75B274B7 /* Pods-HSCMTopSelectBar_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E20634FB3E0ECC5840EE65219A3C310 /* Pods-HSCMTopSelectBar_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5494878D7BA31E8049FB0AF8AB6E8BF8 /* Pods-HSCMTopSelectBar_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A079278B7AB7ADBEF290F36FAD7A3F1D /* Pods-HSCMTopSelectBar_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6600D0719A5F4735CE72A6104CD7C201 /* Pods-HSCMTopSelectBar_Example-dummy.m */; };
@@ -44,7 +44,7 @@
 		5494878D7BA31E8049FB0AF8AB6E8BF8 /* Pods-HSCMTopSelectBar_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HSCMTopSelectBar_Tests-umbrella.h"; sourceTree = "<group>"; };
 		56DA52A7C5ABBC2FFF1F75A35C371C89 /* Pods-HSCMTopSelectBar_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HSCMTopSelectBar_Tests.modulemap"; sourceTree = "<group>"; };
 		591BFBA8538DDA96C8741516F529541F /* HSCMTopSelectBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HSCMTopSelectBar-prefix.pch"; sourceTree = "<group>"; };
-		5B464296D76FC5A8DA74DBFA0F6B5B8B /* HSCMTopSelectBarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HSCMTopSelectBarView.swift; path = HSCMTopSelectBar/Classes/HSCMTopSelectBarView.swift; sourceTree = "<group>"; };
+		5B464296D76FC5A8DA74DBFA0F6B5B8B /* HSCMTopSelectBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HSCMTopSelectBar.swift; path = HSCMTopSelectBar/Classes/HSCMTopSelectBar.swift; sourceTree = "<group>"; };
 		6600D0719A5F4735CE72A6104CD7C201 /* Pods-HSCMTopSelectBar_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HSCMTopSelectBar_Example-dummy.m"; sourceTree = "<group>"; };
 		71660F2D6DCB59A2ED05C50E8C23CAE0 /* TopSelectBarCircleMarkView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TopSelectBarCircleMarkView.swift; path = HSCMTopSelectBar/Classes/TopSelectBarCircleMarkView.swift; sourceTree = "<group>"; };
 		750B3DC4F52AEC09EE438DE6829B2E69 /* Pods-HSCMTopSelectBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HSCMTopSelectBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				F5F4D113237D07A186574DC41D07A898 /* CMTopSelectBarCell.swift */,
-				5B464296D76FC5A8DA74DBFA0F6B5B8B /* HSCMTopSelectBarView.swift */,
+				5B464296D76FC5A8DA74DBFA0F6B5B8B /* HSCMTopSelectBar.swift */,
 				71660F2D6DCB59A2ED05C50E8C23CAE0 /* TopSelectBarCircleMarkView.swift */,
 				F198E5474D583D5851E263140A91C25B /* Pod */,
 				AF85DD43A484124AFA9B22084DDA7899 /* Support Files */,
@@ -375,7 +375,7 @@
 			files = (
 				DD1A40D9332346C1D7D1641BB3FD109B /* CMTopSelectBarCell.swift in Sources */,
 				096B70B74C6BBDA26E423ACCD149BBBB /* HSCMTopSelectBar-dummy.m in Sources */,
-				7A81E69CB7F4551440E60EB713B51C75 /* HSCMTopSelectBarView.swift in Sources */,
+				7A81E69CB7F4551440E60EB713B51C75 /* HSCMTopSelectBar.swift in Sources */,
 				AF26C4C07A639DDD4018159A50E8697B /* TopSelectBarCircleMarkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

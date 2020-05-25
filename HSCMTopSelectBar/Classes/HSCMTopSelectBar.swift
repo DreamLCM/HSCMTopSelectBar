@@ -8,6 +8,8 @@
 
 import UIKit
 
+import UIKit
+
 /// 数据源代理
 public protocol HSCMTopSelectBarViewDataSource : NSObjectProtocol {
     func topSelectBarViewArrayTitle() -> [String]
@@ -26,7 +28,11 @@ open class HSCMTopSelectBar: UIView {
         let collectionViewLayout = UICollectionViewFlowLayout()
         let collectionViewTemp = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60), collectionViewLayout: collectionViewLayout)
         collectionViewTemp.backgroundColor = .clear
-        collectionViewTemp.register(UINib(nibName: "CMTopSelectBarCell", bundle: nil), forCellWithReuseIdentifier: "CMTopSelectBarCell")
+       
+        let url = Bundle(for: type(of: self)).url(forResource: "HSCMTopSelectBar", withExtension: "bundle")
+        collectionViewTemp.register(UINib(nibName: "CMTopSelectBarCell", bundle:
+        Bundle(url: url!)), forCellWithReuseIdentifier: "CMTopSelectBarCell")
+        
         collectionViewTemp.isScrollEnabled = false
         collectionViewTemp.delegate = self
         collectionViewTemp.dataSource = self
@@ -59,11 +65,11 @@ open class HSCMTopSelectBar: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
 
         viewDividingLine.backgroundColor = colorDividingLine
         addSubview(viewDividingLine)
         addSubview(collectionViewSelectContent)
+    
     }
     
     required public init?(coder: NSCoder) {
@@ -78,7 +84,7 @@ extension HSCMTopSelectBar: UICollectionViewDataSource,
                             UICollectionViewDelegateFlowLayout {
     
     
-    private func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: Int(UIScreen.main.bounds.width)/arraySelectTitle.count, height: 60)
     }
     
@@ -92,18 +98,19 @@ extension HSCMTopSelectBar: UICollectionViewDataSource,
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+                
         guard let cmTopSelectBarCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CMTopSelectBarCell", for: indexPath) as? CMTopSelectBarCell else {
             return UICollectionViewCell()
         }
         cmTopSelectBarCell.labelTitle.text = arraySelectTitle[indexPath.item]
-        
+
         if indexPath.item == currentSelectItem {
             configCell(cmTopSelectBarCell, transformNum: transformNum, colorStroke: selectColor)
         } else {
             configCell(cmTopSelectBarCell, transformNum: 1, colorStroke: noSelectColor)
         }
         return cmTopSelectBarCell
+        
     }
     
     ///     配置不同样式的cell
@@ -113,7 +120,7 @@ extension HSCMTopSelectBar: UICollectionViewDataSource,
         cell.viewTopBarSelectMark.colorStroke = colorStroke
     }
     
-    private func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
             
         collectionView.visibleCells.forEach { (cell) in
             let wCell = cell.frame.size.width
@@ -121,7 +128,7 @@ extension HSCMTopSelectBar: UICollectionViewDataSource,
         }
     }
     
-    private func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let delegate = delegate {
             delegate.topSelectBarView(didSelectItemAt: indexPath.item)
         }

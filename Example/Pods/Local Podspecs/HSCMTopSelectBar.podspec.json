@@ -1,22 +1,27 @@
 {
   "name": "HSCMTopSelectBar",
-  "version": "0.1.0",
-  "summary": "A short description of HSCMTopSelectBar.",
+  "version": "1.0.1",
+  "summary": "自定义 HSCMTopSelectBar.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/953330953@qq.com/HSCMTopSelectBar",
+  "homepage": "https://github.com/DreamLCM/HSCMTopSelectBar",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "953330953@qq.com": "953330953@qq.com"
+    "cimons": "953330953@qq.com"
   },
   "source": {
-    "git": "https://github.com/953330953@qq.com/HSCMTopSelectBar.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/DreamLCM/HSCMTopSelectBar.git",
+    "tag": "1.0.1"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "11.0"
   },
-  "source_files": "HSCMTopSelectBar/Classes/**/*"
+  "source_files": "HSCMTopSelectBar/Classes/**/*",
+  "resource_bundles": {
+    "HSCMTopSelectBar": [
+      "HSCMTopSelectBar/Assets/*"
+    ]
+  }
 }

@@ -66,7 +66,7 @@ open class HSCMTopSelectBar: UIView {
         addSubview(collectionViewSelectContent)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -78,11 +78,11 @@ extension HSCMTopSelectBar: UICollectionViewDataSource,
                             UICollectionViewDelegateFlowLayout {
     
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    private func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: Int(UIScreen.main.bounds.width)/arraySelectTitle.count, height: 60)
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let dataSource = dataSource {
             arraySelectTitle = dataSource.topSelectBarViewArrayTitle()
             return arraySelectTitle.count
@@ -91,7 +91,7 @@ extension HSCMTopSelectBar: UICollectionViewDataSource,
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cmTopSelectBarCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CMTopSelectBarCell", for: indexPath) as? CMTopSelectBarCell else {
             return UICollectionViewCell()
@@ -113,7 +113,7 @@ extension HSCMTopSelectBar: UICollectionViewDataSource,
         cell.viewTopBarSelectMark.colorStroke = colorStroke
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    private func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
             
         collectionView.visibleCells.forEach { (cell) in
             let wCell = cell.frame.size.width
@@ -121,7 +121,7 @@ extension HSCMTopSelectBar: UICollectionViewDataSource,
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    private func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let delegate = delegate {
             delegate.topSelectBarView(didSelectItemAt: indexPath.item)
         }

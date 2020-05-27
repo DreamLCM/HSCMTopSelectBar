@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HSCMTopSelectBar'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = '自定义 HSCMTopSelectBar.'
 
 # This description is used to generate tags and improve search results.

@@ -6,7 +6,13 @@
 //  Copyright © 2020 Cimons. All rights reserved.
 //
 
-import UIKit
+//
+//  HSCMTopSelectBarView.swift
+//  HSCMTopSelectBar
+//
+//  Created by Cimons on 2020/5/18.
+//  Copyright © 2020 Cimons. All rights reserved.
+//
 
 import UIKit
 
@@ -14,10 +20,14 @@ import UIKit
 public protocol HSCMTopSelectBarViewDataSource : NSObjectProtocol {
     func topSelectBarViewArrayTitle() -> [String]
 }
+
 /// 点击代理
-public protocol HSCMTopSelectBarViewDelegate : NSObjectProtocol {
-     func topSelectBarView(didSelectItemAt index: Int)
+@objc public protocol HSCMTopSelectBarViewDelegate : AnyObject {
+     
+    func topDidSelectBarView(didSelectItemAt index: Int)
+    @objc optional func topShouldSelectBarView(didSelectItemAt index: Int) -> Bool
 }
+
 
 
 
@@ -42,7 +52,11 @@ open class HSCMTopSelectBar: UIView {
     }()
     
     /// 当前选择的item
-    private var currentSelectItem = 0
+    public var currentSelectItem = 0 {
+        didSet {
+            collectionViewSelectContent.reloadData()
+        }
+    }
     /// 选择的颜色
     public var selectColor = UIColor(red: 84/255.0, green: 93/255.0, blue: 255/255.0, alpha: 1.0)
     /// 未选的颜色
@@ -128,9 +142,17 @@ extension HSCMTopSelectBar: UICollectionViewDataSource,
         }
     }
     
+    public func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        if let delegate = delegate {
+            return delegate.topShouldSelectBarView?(didSelectItemAt: indexPath.item) ?? true
+        } else {
+            return true
+        }
+    }
+    
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let delegate = delegate {
-            delegate.topSelectBarView(didSelectItemAt: indexPath.item)
+            delegate.topDidSelectBarView(didSelectItemAt: indexPath.item)
         }
         currentSelectItem = indexPath.item
         collectionView.reloadData()
